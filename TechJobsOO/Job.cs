@@ -41,7 +41,26 @@ namespace TechJobsOO
             return HashCode.Combine(Id);
         }
 
-        // TODO: Generate Equals() and GetHashCode() methods.
+        public override string ToString()
+        {
+            string newString = "\n" + "ID: " + Id + "\n";
 
+            if (Name != null) { newString += $"Name: {Name}\n"; }         
+            else { newString += "Name: Data not available\n"; }
+            
+            if (EmployerName != null) { newString += $"Employer: {EmployerName.Value}\n"; }
+            else { newString += "Employer: Data not available\n"; }
+
+            if (EmployerLocation != null) { newString += $"Location: {EmployerLocation.Value}\n"; }
+            else { newString += "Location: Data not available\n"; }
+
+            if (JobType != null) { newString += $"Position Type: {JobType.Value}\n"; }
+            else { newString += "Position Type: Data not available\n"; }
+
+            if (JobCoreCompetency != null) { newString += $"Core Competency: {JobCoreCompetency.Value}\n"; }
+            else { newString += "Core Competency: Data not available\n"; }
+
+            return newString;
+        }
     }
 }
